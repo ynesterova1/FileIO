@@ -53,14 +53,14 @@ def show_history():
     links_listbox.grid(row=0, column=1, padx=(0, 10), pady=10)
 
     with open(history_file, 'r') as f:
-        history = json.losd(f)
+        history = json.load(f)
         for item in history:
             files_listbox.insert(END, item['file_path'])
             links_listbox.insert(END, item['download_link'])
 
 window = Tk()
 window.title("Сохранение файлов в облаке")
-window.geometry("300x100")
+window.geometry("300x150")
 
 button = ttk.Button(text="Загрузить файл", command=upload)
 button.pack()
